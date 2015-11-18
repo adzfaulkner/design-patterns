@@ -1,0 +1,28 @@
+{
+    "name": "adzfaulkner/DesignPatterns",
+    "description": "Got to four design patterns",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "keywords": ["design patterns"],
+    "time": "2015-10-03",
+    "authors": [
+        {
+            "name": "Adam Faulkner",
+            "email": "adzfaulkner@hotmail.com.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/adzfaulkner/devices.git"
+        }
+    ],
+    "require": {
+        "adzfaulkner/Devices": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arjf\\DesignPatterns\\": "src/"
+        }
+    }
+}

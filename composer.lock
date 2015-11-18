@@ -1,0 +1,48 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d9b668ba0b4c5aff8ba9b7aab4371bbb",
+    "content-hash": "b5d6cb946233ec744398eae0feffbed4",
+    "packages": [
+        {
+            "name": "adzfaulkner/Devices",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adzfaulkner/devices.git",
+                "reference": "411c4f05f2413c5116fe710de29ea93c61a84c16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Arjf\\Devices\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Faulkner",
+                    "email": "adzfaulkner@hotmail.com.com"
+                }
+            ],
+            "description": "Basic device models",
+            "keywords": [
+                "devices"
+            ],
+            "time": "2015-10-06 19:37:07"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
