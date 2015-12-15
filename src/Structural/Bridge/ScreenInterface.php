@@ -1,62 +1,35 @@
 <?php
-namespace Arjf\DesignPatterns\Structural\Adapter\Iphone\Screen;
+namespace Arjf\DesignPatterns\Structural\Bridge;
 
-class Screen {
+interface ScreenInterface
+{
     /**
-     *
-     * @var int
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
      */
-    protected $width;
+    public function illuminate();
     
     /**
-     *
-     * @var int 
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
      */
-    protected $height;
+    public function darken();
     
     /**
-     * 
-     * @param int $width
-     * @param int $height
+     * @return bool
      */
-    public function __construct($width, $height) {
-        $this->setWidth($width);
-        $this->setHeight($height);
-    }
+    public function isIlluminated();
     
     /**
-     * 
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function increaseContrast();
+    
+    /**
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function decreaseContrast();
+    
+    /**
      * @return int
      */
-    public function getWidth()
-    {
-        return (int)$this->width;
-    }
-    
-    /**
-     * 
-     * @param int $width
-     */
-    public function setWidth($width) 
-    {
-        $this->width = (int)$width;
-    }
-    
-    /**
-     * 
-     * @return int
-     */
-    public function getHeight()
-    {
-        return (int)$this->height;
-    }
-    
-    /**
-     * 
-     * @param int $height
-     */
-    public function setHeight($height)
-    {
-        $this->height = (int)$height;
-    }
+    public function getContrast();
 }

@@ -1,62 +1,89 @@
 <?php
-namespace Arjf\DesignPatterns\Structural\Adapter\Iphone\Screen;
+namespace Arjf\DesignPatterns\Structural\Bridge;
+use Arjf\Devices\Handheld\Apple\Screen as AppleScreen;
 
-class Screen {
+class Screen extends AppleScreen implements ScreenInterface
+{
+    const CONTRAST_FLOOR = 1;
+    const CONTRAST_CEIL = 10;
+    
     /**
-     *
      * @var int
      */
-    protected $width;
+    protected $contrast;
     
     /**
-     *
-     * @var int 
+     * @var bool 
      */
-    protected $height;
+    protected $illuminated;
     
     /**
-     * 
      * @param int $width
      * @param int $height
+     * @param bool $retina
      */
-    public function __construct($width, $height) {
-        $this->setWidth($width);
-        $this->setHeight($height);
+    public function __construct($width, $height, $retina = true) {
+        parent::__construct($width, $height, $retina);
+        $this->contrast = self::CONTRAST_FLOOR;
+        $this->illuminate();
+    }
+
+    /**
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function illuminate()
+    {
+        $this->illuminated = true;
+        return $this;
     }
     
     /**
-     * 
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function darken()
+    {
+        $this->illuminated = false;
+        return $this;
+    }
+    
+    /**
+     * @return bool
+     */
+    public function isIlluminated()
+    {
+        return $this->illuminated;
+    }
+    
+    /**
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function increaseContrast()
+    {
+        if ($this->isIlluminated() && $this->contrast < self::CONTRAST_CEIL) {
+            $this->contrast++;
+        }
+        
+        return $this;
+    }
+    
+    /**
+     * @return \Arjf\DesignPatterns\Structural\Bridge\Screen
+     */
+    public function decreaseContrast()
+    {
+        if ($this->isIlluminated() && $this->contrast > self::CONTRAST_FLOOR) {
+            $this->contrast--;
+        }
+        
+        return $this;
+    } 
+    
+    /**
      * @return int
      */
-    public function getWidth()
+    public function getContrast()
     {
-        return (int)$this->width;
-    }
-    
-    /**
-     * 
-     * @param int $width
-     */
-    public function setWidth($width) 
-    {
-        $this->width = (int)$width;
-    }
-    
-    /**
-     * 
-     * @return int
-     */
-    public function getHeight()
-    {
-        return (int)$this->height;
-    }
-    
-    /**
-     * 
-     * @param int $height
-     */
-    public function setHeight($height)
-    {
-        $this->height = (int)$height;
+        return $this->contrast;
     }
 }
+

@@ -1,62 +1,51 @@
 <?php
-namespace Arjf\DesignPatterns\Structural\Adapter\Iphone\Screen;
+namespace Arjf\DesignPatterns\Structural\Bridge;
 
-class Screen {
+class DeviceControls
+{
     /**
      *
-     * @var int
+     * @var \Arjf\DesignPatterns\Structural\Bridge\ScreenInterface
      */
-    protected $width;
+    protected $screen;
     
     /**
-     *
-     * @var int 
+     * @param \Arjf\DesignPatterns\Structural\Bridge\ScreenInterface $screen
      */
-    protected $height;
-    
-    /**
-     * 
-     * @param int $width
-     * @param int $height
-     */
-    public function __construct($width, $height) {
-        $this->setWidth($width);
-        $this->setHeight($height);
+    public function __construct(ScreenInterface $screen)
+    {
+        $this->screen = $screen;
     }
     
     /**
-     * 
-     * @return int
+     * @return \Arjf\DesignPatterns\Structural\Bridge\DeviceControls
      */
-    public function getWidth()
+    public function homeButtonPressed()
     {
-        return (int)$this->width;
+        if ($this->screen->isIlluminated() === true) {
+            $this->screen->darken();
+        } else {
+            $this->screen->illuminate();
+        }
+        
+        return $this;
     }
     
     /**
-     * 
-     * @param int $width
+     * @return \Arjf\DesignPatterns\Structural\Bridge\DeviceControls
      */
-    public function setWidth($width) 
+    public function accessbilityContrastSlideLeft()
     {
-        $this->width = (int)$width;
+        $this->screen->decreaseContrast();
+        return $this;
     }
     
     /**
-     * 
-     * @return int
+     * @return \Arjf\DesignPatterns\Structural\Bridge\DeviceControls
      */
-    public function getHeight()
+    public function accessbilityContrastSlideRight()
     {
-        return (int)$this->height;
-    }
-    
-    /**
-     * 
-     * @param int $height
-     */
-    public function setHeight($height)
-    {
-        $this->height = (int)$height;
+        $this->screen->increaseContrast();
+        return $this;
     }
 }
