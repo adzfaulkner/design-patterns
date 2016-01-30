@@ -13,7 +13,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/adzfaulkner/devices.git",
-                "reference": "411c4f05f2413c5116fe710de29ea93c61a84c16"
+                "reference": "d0fa5561f409d8828a97c838ac0d21052fb31a0a"
             },
             "type": "library",
             "autoload": {
@@ -34,7 +34,7 @@
             "keywords": [
                 "devices"
             ],
-            "time": "2015-10-06 19:37:07"
+            "time": "2016-01-30 12:32:43"
         }
     ],
     "packages-dev": [],
