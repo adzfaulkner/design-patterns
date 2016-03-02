@@ -18,7 +18,8 @@
         }
     ],
     "require": {
-        "adzfaulkner/Devices": "*"
+        "adzfaulkner/Devices": "*",
+        "phake/phake": "^2.2"
     },
     "autoload": {
         "psr-4": {
