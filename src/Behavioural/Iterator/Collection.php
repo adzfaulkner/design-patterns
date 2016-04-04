@@ -1,5 +1,5 @@
 <?php
-namespace Arjf\DesignPatterns\Structural\Iterator;
+namespace Arjf\DesignPatterns\Behavioural\Iterator;
 
 class Collection extends \ArrayIterator {
     

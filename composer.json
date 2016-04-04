@@ -2,7 +2,6 @@
     "name": "adzfaulkner/DesignPatterns",
     "description": "Got to four design patterns",
     "license": "MIT",
-    "minimum-stability": "dev",
     "keywords": ["design patterns"],
     "time": "2015-10-03",
     "authors": [

@@ -1,10 +1,10 @@
 <?php
-use Arjf\DesignPatterns\Structural\Iterator\Collection;
+use Arjf\DesignPatterns\Behavioural\Iterator\Collection;
 use Arjf\Devices\Handheld\Apple\Iphone\Six;
 use Arjf\Devices\Handheld\Apple\Screen;
 use Arjf\Devices\Handheld\Apple\Iphone\SixPlus;
 
-class IteratorTest extends PHPUnit_Framework_TestCase {
+class ValidatorTest extends PHPUnit_Framework_TestCase {
     public function testCollection()
     {
         $screen = new Screen(320, 480);
