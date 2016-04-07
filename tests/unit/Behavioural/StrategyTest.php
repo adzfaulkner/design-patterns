@@ -2,7 +2,8 @@
 use Arjf\DesignPatterns\Behavioural\Strategy;
 use Arjf\DesignPatterns\Behavioural\Strategy\Persistors;
 
-class StrategyTest extends PHPUnit_Framework_TestCase {
+class StrategyTest extends PHPUnit_Framework_TestCase
+{
     
     public function getData()
     {

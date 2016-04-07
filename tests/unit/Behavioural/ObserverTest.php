@@ -2,7 +2,8 @@
 use Arjf\DesignPatterns\Behavioural\Observer;
 use Arjf\DesignPatterns\Behavioural\Observer\Observers;
 
-class ObserverTest extends PHPUnit_Framework_TestCase {
+class ObserverTest extends PHPUnit_Framework_TestCase
+{
     
     public function testCustomer()
     {

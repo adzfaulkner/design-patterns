@@ -2,7 +2,8 @@
 use Arjf\DesignPatterns\Behavioural\State;
 use Arjf\DesignPatterns\Behavioural\State\Step;
 
-class StateTest extends PHPUnit_Framework_TestCase {
+class StateTest extends PHPUnit_Framework_TestCase
+{
 
     /**
      * @var State\Application

@@ -3,7 +3,8 @@ use Arjf\DesignPatterns\Behavioural\ChainOfResponsibility;
 use Arjf\DesignPatterns\Behavioural\ChainOfResponsibility\Validator;
 use Arjf\DesignPatterns\Behavioural\ChainOfResponsibility\Handler;
 
-class ChainOfResponsibiltyTest extends PHPUnit_Framework_TestCase {
+class ChainOfResponsibiltyTest extends PHPUnit_Framework_TestCase
+{
     
     public function testIsAlphanumericValidator()
     {

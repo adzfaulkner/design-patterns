@@ -2,8 +2,12 @@
 use Arjf\DesignPatterns\Behavioural\Mediator;
 use Arjf\DesignPatterns\Behavioural\Mediator\Component;
 
-class MediatorTest extends PHPUnit_Framework_TestCase {
+class MediatorTest extends PHPUnit_Framework_TestCase
+{
 
+    /**
+     * @var Mediator\Broker
+     */
     public $broker;
 
     public function setUp()
