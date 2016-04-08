@@ -20,23 +20,23 @@ class History
 
     /**
      * @return Application
-     * @thows \LogicException
      */
     public function restoreLast()
     {
-        if (empty(count($this->history))) {
-            throw new \LogicException('No states have been saved');
-        }
-
         return $this->restore(count($this->history)-1);
     }
 
     /**
      * @param int $index
      * @return Application
+     * @thows \OutOfBoundsException
      */
     public function restore($index)
     {
+        if (empty($this->history[$index])) {
+            throw new \OutOfBoundsException('State does not exist');
+        }
+
         return unserialize($this->history[$index]);
     }
 }

@@ -30,12 +30,21 @@ class MementoTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException LogicException
+     * @expectedException OutOfBoundsException
+     */
+    public function testEmptyLast()
+    {
+        $memento = self::$memento;
+        $memento->restoreLast();
+    }
+
+    /**
+     * @expectedException OutOfBoundsException
      */
     public function testEmptyHistory()
     {
         $memento = self::$memento;
-        $memento->restoreLast();
+        $memento->restore(0);
     }
 
     public function testSaveAndRestorePersonal()
@@ -55,6 +64,11 @@ class MementoTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('\Arjf\DesignPatterns\Behavioural\State\Step\Personal', $previous->getCurrentStep());
         $this->assertEquals('MR', $previous->getCurrentStep()->getSalutation());
+
+        $previous2 = $memento->restore(0);
+
+        $this->assertInstanceOf('\Arjf\DesignPatterns\Behavioural\State\Step\Personal', $previous2->getCurrentStep());
+        $this->assertEquals('MR', $previous2->getCurrentStep()->getSalutation()); 
     }
 
     public function testSaveAndRestoreIncome()
@@ -74,6 +88,16 @@ class MementoTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('\Arjf\DesignPatterns\Behavioural\State\Step\Income', $previous->getCurrentStep());
         $this->assertEquals(1000, $previous->getCurrentStep()->getNetIncome());
+
+        $previous2 = $memento->restore(1);
+
+        $this->assertInstanceOf('\Arjf\DesignPatterns\Behavioural\State\Step\Income', $previous2->getCurrentStep());
+        $this->assertEquals(1000, $previous2->getCurrentStep()->getNetIncome());
+
+        $previousFirst = $memento->restore(0);
+
+        $this->assertInstanceOf('\Arjf\DesignPatterns\Behavioural\State\Step\Personal', $previousFirst->getCurrentStep());
+        $this->assertEquals('MR', $previousFirst->getCurrentStep()->getSalutation());
     }
 
 }
