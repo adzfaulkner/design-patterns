@@ -23,7 +23,7 @@ class History
      */
     public function restoreLast()
     {
-        return $this->restore(count($this->history)-1);
+        return $this->restore($this->getLastIndex());
     }
 
     /**
@@ -38,5 +38,13 @@ class History
         }
 
         return unserialize($this->history[$index]);
+    }
+
+    /**
+     * @return int
+     */
+    protected function getLastIndex()
+    {
+        return count($this->history) - 1;
     }
 }

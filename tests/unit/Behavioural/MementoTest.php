@@ -26,7 +26,7 @@ class MementoTest extends PHPUnit_Framework_TestCase
             new Step\Complete()
         );
 
-        self::$memento = new Memento\History();
+        self::$memento = Phake::partialMock('\Arjf\DesignPatterns\Behavioural\Memento\History');
     }
 
     /**
@@ -44,7 +44,7 @@ class MementoTest extends PHPUnit_Framework_TestCase
     public function testEmptyHistory()
     {
         $memento = self::$memento;
-        $memento->restore(0);
+        $memento->restore(Phake::makeVisible(self::$memento)->getLastIndex() + 1);
     }
 
     public function testSaveAndRestorePersonal()
