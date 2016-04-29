@@ -47,5 +47,8 @@ abstract class AbstractRenderer
         }
     }
 
+    /**
+     * sets the header content type for the class
+     */
     abstract protected function setContentType();
 }

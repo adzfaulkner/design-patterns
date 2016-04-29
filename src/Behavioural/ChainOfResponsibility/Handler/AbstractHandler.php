@@ -1,5 +1,6 @@
 <?php
 namespace Arjf\DesignPatterns\Behavioural\ChainOfResponsibility\Handler;
+
 use Arjf\DesignPatterns\Behavioural\ChainOfResponsibility\Validator\ValidatorInterface;
 
 abstract class AbstractHandler
