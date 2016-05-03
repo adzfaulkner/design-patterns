@@ -27,11 +27,12 @@ class VisitorTest extends PHPUnit_Framework_TestCase
     {
         $screen = $device->getScreen();
         $device->accept($visitor);
+        $specification = $visitor->getSpecification();
 
-        $this->assertEquals('Colour is: ' . $device->getColour() . PHP_EOL .
-'Price is: ' . $device->getPrice()  . PHP_EOL .
-'Screen dimensions: ' . $screen->getHeight() . 'x' . $screen->getWidth() . PHP_EOL .
-'Device Capacity: ' . $device->getCapacity(), $visitor->getSpecification());
+        $this->assertRegExp('/Colour is: ' . $device->getColour() . '/', $specification);
+        $this->assertRegExp('/Price is: ' . $device->getPrice() . '/', $specification);
+        $this->assertRegExp('/Screen dimensions: ' . $screen->getHeight() . 'x' . $screen->getWidth() . '/', $specification);
+        $this->assertRegExp('/Device Capacity: ' . $device->getCapacity() . '/', $specification);
     }
 
     /**
