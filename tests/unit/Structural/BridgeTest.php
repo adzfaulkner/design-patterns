@@ -64,7 +64,7 @@ class BridgeTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(1, $screen->getContrast());
         $controls->accessbilityContrastSlideLeft();
         $this->assertEquals(1, $screen->getContrast());
-        for ($i < 1;$i < 6;$i++) {
+        for ($i = 0;$i < 6;$i++) {
             $controls->accessbilityContrastSlideRight();
         }
         $this->assertEquals(7, $screen->getContrast());
