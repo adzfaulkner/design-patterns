@@ -32,7 +32,7 @@ class VisitorTest extends PHPUnit_Framework_TestCase
         $this->assertRegExp('/Colour is: ' . $device->getColour() . '/', $specification);
         $this->assertRegExp('/Price is: ' . $device->getPrice() . '/', $specification);
         $this->assertRegExp('/Screen dimensions: ' . $screen->getHeight() . 'x' . $screen->getWidth() . '/', $specification);
-        $this->assertRegExp('/Device Capacity: ' . $device->getCapacity() . '/', $specification);
+        $this->assertRegExp('/Device Capacity: ' . $device->getCapacity() . 'gb/', $specification);
     }
 
     /**

@@ -34,7 +34,7 @@ class HandheldSpecification implements VisitorInterface
             'Colour is: ' . $handheld->getColour(),
             'Price is: ' . $handheld->getPrice(),
             'Screen dimensions: ' . $screen->getHeight() . 'x' . $screen->getWidth(),
-            'Device Capacity: ' . $handheld->getCapacity(),
+            'Device Capacity: ' . $handheld->getCapacity() . 'gb',
         ]);
     }
 }
